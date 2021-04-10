@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: apinode
+  name: apinode
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: apinode
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: apinode
+    spec:
+      containers:
+      - image: msds/api-node
+        name: api-node
+        imagePullPolicy: Never
+        resources: {}
+        ports:
+          - containerPort: 3000 
+status: {}

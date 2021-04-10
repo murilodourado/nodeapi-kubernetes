@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api-node-pod
+spec:
+  containers:
+    - image: msds/api-node
+      name: api-node
+      imagePullPolicy: Never
+      resources: {}
+      ports:
+        - containerPort: 3000
